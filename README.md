@@ -107,6 +107,15 @@ We additionally provide a lightweight implementation for rigid **3D–2D registr
 
 📚 To fully replicate experiments, real laparoscopic data and keyframes from the [P2ILF Challenge](https://github.com/sharib-vision/P2ILF/tree/main) are needed.
 
+<details>
+<summary>Registration Framework</summary>
+
+![Registration Framework](PyTorch3D-3D-2D-Registration/RegistrationFramework.png)
+
+<sup>Framework illustrating 3D mesh to 2D keyframe registration using differentiable rendering.</sup>
+
+</details>
+
 ## 🙏 Acknowledgments
 
 This project builds upon several excellent open-source works and datasets.  
