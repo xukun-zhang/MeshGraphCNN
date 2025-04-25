@@ -30,6 +30,7 @@ The main pipeline can be executed by running:
 
 ```bash
 python run_p2ilf_7.py
+```
 
 This script performs rigid registration between 3D liver meshes and 2D laparoscopic landmarks.
 
