@@ -72,7 +72,7 @@ Each mesh annotation labels:
 - **Falciform Ligament** (class 2)
 - **Liver Ridge** (class 3)
 
-All annotation procedures reference anatomical positions visible in CT and laparoscopic views, ensuring spatial consistency.
+All annotation procedures reference anatomical positions visible in CT views, ensuring spatial consistency.
 
 ### ✏️ Annotation Workflow
 
