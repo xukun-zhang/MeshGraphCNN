@@ -31,3 +31,20 @@ The main pipeline can be executed by running:
 ```bash
 python run_p2ilf_7.py
 
+This script performs rigid registration between 3D liver meshes and 2D laparoscopic landmarks.
+
+---
+
+## 📁 Required Inputs
+
+- `obj/`: Preoperative 3D liver mesh models in `.obj` format  
+  _Example_: `obj/3Dircadb-10.obj`
+  
+- `image-2d-landmrk/`: JSON or TXT files containing 2D anatomical landmarks from laparoscopic keyframes
+
+- `camera-parameter/`: JSON or TXT files specifying laparoscope intrinsic parameters (`fx`, `fy`, `cx`, `cy`)
+
+---
+
+## 📂 Directory Structure
+
