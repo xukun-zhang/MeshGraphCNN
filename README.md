@@ -8,7 +8,7 @@ We describe a mesh-based deep learning framework for automatically segmenting an
 
 ---
 
-## 🔍 Overview
+## 🔍 Highlights
 
 - ⚙️ A novel nested resolution Mesh-Graph CNN is proposed for the segmentation of liver surface anatomical landmarks.
 - 🧠 Seamlessly integrated global shape analysis with local topological refinement is proposed to enhance segmentation accuracy.
