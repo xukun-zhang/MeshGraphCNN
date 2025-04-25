@@ -1,29 +1,45 @@
-# MeshGraphCNN
+# Nested Resolution Mesh-Graph CNN for Liver Landmark Segmentation
 
-The three folders "livermesh", "seg" and "sseg" represent the Mesh mesh of the liver and the labels of the corresponding edges, and the soft labels, respectively. 
+This repository provides the implementation and dataset used in our study:
 
-![Examples of annotations based on the position of the sickle ligament on CT images](./SlicerApp-real_GBVh8fWFwm.gif)
-<sup>Here we use a CT image from [the 3Dircadb database] (https://www.ircad.fr/research/data-sets/liver-segmentation-3d-ircadb-01/) as an example to show how the area of the falciform ligament can be annotated from a CT image. Specifically, the falciform ligament divides the liver into left and right lobes. Therefore, the initial annotation starting point can be found from the CT image. Since the ligament will extend to the abdominal cavity, slide sections from the CT image until the ligament area can be seen at the abdominal cavity junction is noted. **Note that** the annotations in the above CT images indicate the location of the falciform ligament, but destroy the liver surface mesh. Therefore, our liver-based label re-exports an unmanipulated mesh of the liver surface. Then, based on the above position as a reference, **MeshLab** and **Blender** software were used to annotate the mesh edges where ligaments were located on the new liver surface network.</sup>
+> **Nested Resolution Mesh-Graph CNN for Automated Extraction of Liver Surface Anatomical Landmarks**  
 
-### Paper
+We describe a mesh-based deep learning framework for automatically segmenting anatomical landmarks—specifically the **falciform ligament** and **liver ridge**—on 3D liver meshes. The model combines global geometric learning and local anatomical refinement using dynamic graph convolution (DGCNN) and mesh convolution (MeshConv), aiming to support downstream applications such as **AR-assisted surgical navigation**.
 
-Nested Resolution Mesh-Graph CNN for Automated Extraction of Liver Surface Anatomical Landmarks
+---
 
-### Installation
+## 🔍 Overview
 
-Refer to the official PyTorch version of "MeshCNN". (https://bit.ly/meshcnn) [[Project Page]](https://ranahanocka.github.io/MeshCNN/)<br>
+- ⚙️ A novel nested resolution Mesh-Graph CNN is proposed for the segmentation of liver surface anatomical landmarks.
+- 🧠 Seamlessly integrated global shape analysis with local topological refinement is proposed to enhance segmentation accuracy.
+- 🏷️ An attention fusion module with auxiliary supervision adaptively combines multi-threshold landmark proposals, enhancing spatial consistency and anatomical plausibility.
+- 📊 200 liver meshes are annotated that are used to both develop and validate our methods.
+- ⚙️ Experiments demonstrate superior performance of our method over state-of-the-art in both internal and external datasets.
 
-### Landmark Segmentation
-You need to set up the training set, test set, and verification set subfolders under the liver-mesh path. In other words, split the original obj folder.
+---
 
-Training and testing
+## 📁 Repository Structure
+
 ```bash
-python train.py
-python test.py
+MeshGraphCNN/
+├── datasets/
+│   └── All_data/
+│       ├── livermesh/                # Liver mesh files (.obj)
+│       ├── seg/                      # Edge-wise landmark labels: 1=background, 2=ligament, 3=ridge
+│       ├── sseg/                     # Soft labels (optional)
+│       ├── edges/                    # Mesh edge list per file
+│       ├── classes.txt               # Label definitions
+│       ├── mean_std_cache.p          # MeshCNN normalization cache
+│       └── 3DMeshAnnotationTutorial/
+│           ├── LabelLandmarks-Blender.py
+│           └── annotating-edges-on-a-3D-liver-mesh.pdf
+├── PyTorch3D-3D-2D-Registration/
+│   ├── run_p2ilf_7.py                # PyTorch3D-based 3D-2D registration demo
+│   ├── obj/                          # Liver mesh for registration
+│   ├── camera-parameter/            # Camera intrinsics
+│   ├── image-2d-landmark/           # 2D laparoscopic landmark inputs
+│   └── RegistrationFramework.png    # Framework overview figure
+├── train.py
+├── test.py
+└── ...
 ```
-
-# Questions / Issues
-Note that the code has not been carefully curated. We will carefully collate and republish the submitted papers after the final results are available.
-
-# Acknowledgments
-This code design was adopted from [MeshCNN](https://github.com/ranahanocka/MeshCNN).
