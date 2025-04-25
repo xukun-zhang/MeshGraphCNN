@@ -107,4 +107,15 @@ We additionally provide a lightweight implementation for rigid **3D–2D registr
 
 📚 To fully replicate experiments, real laparoscopic data and keyframes from the [P2ILF Challenge](https://github.com/sharib-vision/P2ILF/tree/main) are needed.
 
+## 🙏 Acknowledgments
+
+This project builds upon several excellent open-source works and datasets.  
+We sincerely acknowledge the following contributions:
+
+- [MeshCNN](https://github.com/ranahanocka/MeshCNN) — for providing the foundation of mesh convolutional networks.
+- [DGCNN](https://github.com/WangYueFt/dgcnn) — for dynamic graph learning methods utilized in our coarse segmentation stage.
+- [PyTorch3D](https://pytorch3d.org/) — for the differentiable rendering framework enabling our 3D–2D registration experiments.
+- [P2ILF Challenge](https://github.com/sharib-vision/P2ILF/) — for supplying valuable benchmark datasets and clinical evaluation protocols.
+
+We deeply appreciate the efforts of these communities, which made this research possible.
 
