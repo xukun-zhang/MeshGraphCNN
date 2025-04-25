@@ -60,3 +60,54 @@ Ensure your training/validation/test split is prepared under `livermesh/`:
 python train.py
 python test.py
 ```
+
+
+## 📦 Dataset and Annotation Protocol
+
+We provide a curated dataset of **200 liver mesh samples**, manually annotated with edge-level anatomical landmarks.  
+The meshes were reconstructed from three public CT datasets: **3Dircadb**, **MSD8**, and **AMOS**.
+
+Each mesh annotation labels:
+- **Background** (class 1)
+- **Falciform Ligament** (class 2)
+- **Liver Ridge** (class 3)
+
+All annotation procedures reference anatomical positions visible in CT and laparoscopic views, ensuring spatial consistency.
+
+### ✏️ Annotation Workflow
+
+- 📍 Initial localization of the falciform ligament based on CT slice inspection.
+- 🛠 Manual annotation conducted in **3D Slicer** and **Blender** software.
+- 🧩 Edge-level tagging performed using the provided script [`LabelLandmarks-Blender.py`](datasets/All_data/3DMeshAnnotationTutorial/LabelLandmarks-Blender.py).
+
+📄 Full annotation guide:  
+[`annotating-edges-on-a-3D-liver-mesh.pdf`](datasets/All_data/3DMeshAnnotationTutorial/annotating-edges-on-a-3D-liver-mesh.pdf)
+
+<details>
+<summary>CT-Guided Labeling Illustration</summary>
+
+![CT-based localization](./SlicerApp-real_GBVh8fWFwm.gif)
+
+<sup>Example showing how CT slice observations guide the landmark labeling process on 3D liver meshes.</sup>
+
+</details>
+
+---
+
+## 🧮 PyTorch3D-Based 3D–2D Registration Demo
+
+We additionally provide a lightweight implementation for rigid **3D–2D registration** using **PyTorch3D**'s differentiable rendering framework.
+
+- 🗂 Code entry point: [`run_p2ilf_7.py`](PyTorch3D-3D-2D-Registration/run_p2ilf_7.py)
+- 📥 Inputs required:
+  - Liver mesh: `obj/`
+  - 2D laparoscopic landmarks: `image-2d-landmark/`
+  - Camera intrinsics: `camera-parameter/`
+- 🧪 Included example: `3Dircadb-10.obj` (for demonstration)
+
+📚 To fully replicate experiments, real laparoscopic data and keyframes from the [P2ILF Challenge](https://github.com/sharib-vision/P2ILF/tree/main) are needed.
+
+![Registration Framework](PyTorch3D-3D-2D-Registration/RegistrationFramework.png)
+
+<sup>Framework illustrating 3D mesh to 2D keyframe registration using differentiable rendering.</sup>
+
