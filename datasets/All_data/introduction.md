@@ -34,10 +34,9 @@ A full tutorial is provided in [`3DMeshAnnotationTutorial/annotating-edges-on-a-
 
 ## 🧪 Suggested Use
 
-This dataset supports the training and evaluation of anatomical landmark segmentation algorithms on liver meshes, particularly under geometric deep learning frameworks such as **MeshCNN** and **MeshGraphCNN**.
+This dataset supports the training and evaluation of anatomical landmark segmentation algorithms on liver meshes, particularly under geometric deep learning frameworks such as **MeshCNN** and **MeshGraphCNN (Ours)**.
 
 ---
 
-If you use this dataset or annotation protocol in your research, please consider citing the corresponding publication.
 
 
