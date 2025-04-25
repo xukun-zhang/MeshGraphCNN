@@ -43,3 +43,20 @@ MeshGraphCNN/
 ├── test.py
 └── ...
 ```
+
+## 🧪 Getting Started
+
+### 🔧 Installation
+
+This implementation builds on [MeshCNN](https://github.com/ranahanocka/MeshCNN).  
+Please refer to its [installation guide](https://bit.ly/meshcnn) to configure your environment.
+
+
+### 🏁 Training and Testing
+
+Ensure your training/validation/test split is prepared under `livermesh/`:
+
+```bash
+python train.py
+python test.py
+```
