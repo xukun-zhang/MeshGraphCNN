@@ -113,7 +113,7 @@ This project builds upon several excellent open-source works and datasets.
 We sincerely acknowledge the following contributions:
 
 - [MeshCNN](https://github.com/ranahanocka/MeshCNN) — for providing the foundation of mesh convolutional networks.
-- [DGCNN](https://github.com/WangYueFt/dgcnn) — for dynamic graph learning methods utilized in our coarse segmentation stage.
+- [DGCNN](https://github.com/Luhuanz/pytorch_project/tree/7296ea40df088fdeb2e192d71cbc373507156d97/Deep_project/dgcnn) — for dynamic graph learning methods utilized in our coarse segmentation stage.
 - [PyTorch3D](https://pytorch3d.org/) — for the differentiable rendering framework enabling our 3D–2D registration experiments.
 - [P2ILF Challenge](https://github.com/sharib-vision/P2ILF/) — for supplying valuable benchmark datasets and clinical evaluation protocols.
 
