@@ -49,3 +49,14 @@ This script performs rigid registration between 3D liver meshes and 2D laparosco
 
 ## 📂 Directory Structure
 
+PyTorch3D-3D-2D-Registration/ │ ├── obj/ # 3D mesh models (.obj) ├── image-2d-landmrk/ # 2D landmark annotations ├── camera-parameter/ # Camera intrinsics ├── run_p2ilf_7.py # Main registration script ├── RegistrationFramework.png # Overview figure └── Introduction.md # This file
+
+---
+
+## 🧪 Sample Data and Source
+
+We include one reference liver mesh model for demonstration:
+
+- `obj/3Dircadb-10.obj` (from the public 3Dircadb dataset)
+
+For full data used in this paper, including paired 2D/3D landmarks and camera parameters, please refer to the [P2ILF Challenge repository](https://github.com/sharib-vision/P2ILF/tree/main).
